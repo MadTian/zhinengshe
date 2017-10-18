@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>点击按钮div消失</title>
+</head>
+<body>
+
+  <!-- 一片html代码配合上json,再new出来vue实例 -->
+  <div id="box">
+    <input type="button" value="按钮" v-on:mouseover="a=false" v-on:mouseout="a=true"/>
+    <div style="width: 100px; height: 100px; background-color: red" v-show="a"></div>
+  </div>
+  <script type="text/javascript" src="vue.js"></script>  <!-- v1.0.21 -->
+  <script type="text/javascript">
+    var vm = new Vue({  //{}--json形式；c可取任意名字
+      el: '#box', //标签选择器亦可
+      data: {
+        a:true
+      }
+    });
+  </script>
+</body>
+</html>

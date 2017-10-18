@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>vue_循环数组</title>
+</head>
+<body>
+
+  <!-- 一片html代码配合上json,再new出来vue实例 -->
+  <div id="box">
+    <ul>
+      <li v-for="items in json">
+        {{$key}}: {{items}} {{$index}}
+      </li>
+    </ul>
+    <ul>
+      <li v-for="(k,v) in json2">
+        {{$index}}--{{k}}: {{v}}
+      </li>
+    </ul>
+  </div>
+  <script type="text/javascript" src="vue.js"></script>  <!-- v1.0.21 -->
+  <script type="text/javascript">
+
+    var vm = new Vue({  //{}--json形式；c可取任意名字
+      el: '#box', //标签选择器亦可
+      data: {
+        arr: ['apple','orange','banana'],  //数组
+        json: {a: 'apple',b: 'orange', c:'banana'},
+        json2: {a: 'apple',c: 'orange', d:'banana'}
+      }
+    });
+  </script>
+</body>
+</html>

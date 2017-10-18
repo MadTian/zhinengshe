@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>vue_基础事件01</title>
+</head>
+<body>
+
+  <!-- 一片html代码配合上json,再new出来vue实例 -->
+  <div id="box">
+    <ul>
+      <li v-for="(k,v) in json">
+        {{$index}}--{{k}}: {{v}}
+      </li>
+    </ul>
+    <input type="button" value="按钮" v-on:click="show()" />
+  </div>
+  <script type="text/javascript" src="vue.js"></script>  <!-- v1.0.21 -->
+  <script type="text/javascript">
+    var vm = new Vue({  //{}--json形式；c可取任意名字
+      el: '#box', //标签选择器亦可
+      data: {
+        arr: ['apple','orange','banana'],  //数组
+        json: {a: 'apple',b: 'orange', c:'banana'}
+      },
+      methods: {  //务必记得加s
+        show: function(){
+          alert('good');
+        }
+      }
+    });
+  </script>
+</body>
+</html>

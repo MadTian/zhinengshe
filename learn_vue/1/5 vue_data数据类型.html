@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>vue里面的data数据类型</title>
+</head>
+<body>
+
+  <!-- 一片html代码配合上json,再new出来vue实例 -->
+    <input type="text" v-model="msg"/>
+    <br />
+    {{msg}}
+    <br />
+    {{msg2}}
+    <br />
+    {{msg3}}
+    <br />
+    {{arr}}
+    <br />
+    {{json}}  <!-- [object Object] -->
+
+  <script type="text/javascript" src="vue.js"></script>  <!-- v1.0.21 -->
+  <script type="text/javascript">
+
+    var vm = new Vue({  //{}--json形式；c可取任意名字
+      el: 'body', //标签选择器亦可
+      data: {
+        msg: 'Welcome vue',  //string
+        msg2: true,  //boolean
+        msg3: 1314, //number
+        arr: ['apple','orange','banana'],  //数组
+        json: {a: 'apple',b: 'orange', c:'banana'}
+      }
+    });
+  </script>
+</body>
+</html>

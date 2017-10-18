@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>vue属性style</title>
+  <script type="text/javascript" src="vue.js"></script>
+  <script type="text/javascript" src="lib/vue-resource.js"></script>
+  <script type="text/javascript">
+  window.onload = function(){
+    var vm=new Vue({
+      el: "#box",
+      data: {
+       
+      },
+      methods:{
+        get:function(){
+          // alert(1);
+          this.$http.get('a.txt').then(function(res){
+            // alert(res.status); //成功获取，返回200
+            alert(res.data);
+          },function(res){
+            alert(res.data);
+          });
+        }
+      }
+    });
+  }
+  </script>
+</head>
+<body>
+  <div id="box">
+    <input type="button" value="按钮" @click="get()"/>
+  </div>
+</body>
+</html>

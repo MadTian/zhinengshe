@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>v-model示例</title>
+</head>
+<body>
+  <!-- 一片html代码配合上json,再new出来vue实例 -->
+  <div id="box">
+    <input type="text" v-model="msg"/>
+    {{msg}}
+  </div>
+
+  <script type="text/javascript" src="vue.js"></script>  <!-- v1.0.21 -->
+  <script type="text/javascript">
+
+    var c = new Vue({  //{}--json形式；c可取任意名字
+      el: '#box',
+      data: {
+        msg: 'Welcome vue'
+      }
+    });
+
+  </script>
+</body>
+</html>

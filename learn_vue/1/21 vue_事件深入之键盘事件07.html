@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>vue事件深入之键盘事件</title>
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript">
+window.onload = function() {
+  var c = new Vue({
+    el: "#box",
+    data: {
+    },
+    methods: {
+      show1: function(){
+        alert('你按的是左键！');
+      },
+      show2: function(){
+        alert('你按的是上键！');
+      },
+      show3: function(){
+        alert('你按的是右键！');
+      },
+      show4: function(){
+        alert('你按的是下键！');
+      }
+    }
+  });
+}
+</script>
+</head>
+<body>
+  <div id="box">
+    <input type="text" @keydown.left="show1()" />
+    <input type="text" @keydown.up="show2()" />
+    <input type="text" @keydown.right="show3()" />
+    <input type="text" @keydown.down="show4()" />
+  </div>
+</body>
+</html>

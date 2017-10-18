@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>vue_属性class</title>
+  <style type="text/css">
+    .red{color: red;}
+    .blue{background-color: blue;}
+  </style>
+  <script type="text/javascript" src="vue.js"></script>
+  <script type="text/javascript">
+  window.onload = function(){
+    var vm=new Vue({
+      el: '#box',
+      data: {
+        a: true
+      }
+    });
+  }
+  </script>
+</head>
+<body>
+  <div id="box">
+    <strong :class="{red:a,blue:false}">class属性</strong>
+  </div>
+</body>
+</html>

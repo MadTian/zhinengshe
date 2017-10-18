@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>vue属性style</title>
+  <script type="text/javascript" src="vue.js"></script>
+  <script type="text/javascript">
+  window.onload = function(){
+    var vm=new Vue({
+      el: "#box",
+      data: {
+        c:{color:'#fff'},
+        bg:{backgroundColor:'#333'}
+      }
+    });
+  }
+  </script>
+</head>
+<body>
+  <div id="box">
+    <strong :style="[c,bg]">style属性</strong>
+  </div>
+</body>
+</html>

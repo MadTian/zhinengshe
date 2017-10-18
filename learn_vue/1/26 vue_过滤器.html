@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>vue属性style</title>
+  <script type="text/javascript" src="vue.js"></script>
+  <script type="text/javascript">
+  window.onload = function(){
+    var vm=new Vue({
+      el: "#box",
+      data: {
+       
+      }
+    });
+  }
+  </script>
+</head>
+<body>
+  <div id="box">
+    {{'welcome!'|uppercase}} 
+    <br />
+    {{'HELLO!'|lowercase}}
+    <br />
+    {{'leave me alone'|capitalize|uppercase}}
+    <br />
+    {{12|currency}} 
+    <br />
+    {{10000|currency '￥'}} 
+  </div>
+</body>
+</html>

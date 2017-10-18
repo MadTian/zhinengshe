@@ -1,0 +1,84 @@
+01. Vue.JS 第一课 02:51
+02. Vue.JS 第二课 02:02 04:53
+03. Vue.JS 第三课 02:30 07:23
+04. Vue.JS 第四课 01:10 08:33
+05. Vue.JS 第五课 01:19 09:52
+06. Vue.JS 第六课 01:43 11:35 
+07. Vue.JS 第七课 01:49 13:24 
+Vue 1.0.21
+
+官网:http://cn.vuejs.org/
+手册： http://cn.vuejs.org/api/
+
+1、vue和angular的区别：
+1）vue--简单、易学
+           指令以v-xxx
+           一片html代码配合上json,再new出来vue实例
+           个人维护项目
+            适合移动端项目
+
+2）angular
+     angular--上手难
+	指令以 ng-xxx
+	所有属性和方法都挂到$scope身上
+	angular由google维护
+		
+	合适: pc端项目
+
+3）共同点: 不兼容低版本IE
+
+实例vue_demo01.html
+2、常用指令：
+    指令：扩展html标签功能（/属性）
+
+angular: ng-model ng-controller
+Vue:
+1) v-model 一般表单元素 双向数据绑定
+实例：v_model01.html v_model02.html v_model03.html
+2) new Vue data:里面的数据可以是string,number,boolean,array,json
+示例：5 vue_data数据类型
+3) 循环： v-for
+a-循环数组：
+    <ul>
+      <li v-for="value in arr">
+        {{$index}} {{value}}  <!-- 索引值 值 -->
+      </li>
+    </ul>
+
+b--循环json
+    <ul>
+      <li v-for="items in json">
+        {{$index}}--{{$key}}: {{items}}  <!-- 索引、键、值 -->
+      </li>
+    <ul>
+      <li v-for="(k,v) in json2">
+        {{$index}}--{{k}}: {{v}}  <!-- 索引、键、值 -->
+      </li>
+    </ul>
+    </ul>
+
+4）事件：配合methods使用
+      v-on:click= ""
+      v-on:mouseover= ""
+      v-on:mouseout=""
+      v-on:mousedown=""
+      v-on:dblclick=""
+实例见 8 vue_基础事件02.html
+  <input type="button" value="按钮" v-on:click="add()" />
+  <script type="text/javascript">
+    var vm = new Vue({  //{}--json形式；c可取任意名字
+      el: '#box', //标签选择器亦可
+      data: {
+        arr: ['apple','orange','banana'],  //数组
+      },
+      methods: {  //务必记得加s
+        add: function(){
+          // alert(this.arr);
+          this.arr.push('pear'); //this指vm
+        }
+      }
+    });
+  </script>
+
+
+
